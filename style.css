@@ -1,12 +1,12 @@
 body {
-  background: #f0f8ff;
+  background: #f9f9f9;
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
   padding: 50px;
 }
 
 h1 {
-  color: #333;
+  color: #444;
 }
 
 .wheel-container {
@@ -26,15 +26,28 @@ h1 {
     yellow 180deg 270deg,
     blue 270deg 360deg
   );
-  transition: transform 1.2s ease-in-out;
+  transition: transform 0.8s ease-in-out;
 }
 
 .wheel:hover {
-  transform: rotate(360deg);
+  animation: spin 1s ease-in-out forwards;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* For mobile tap */
 @media (hover: none) {
   .wheel:active {
-    transform: rotate(360deg);
+    animation: spin 1s ease-in-out forwards;
   }
 }
