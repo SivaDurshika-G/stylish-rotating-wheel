@@ -1,24 +1,15 @@
 body {
-  background: #f9f9f9;
-  font-family: 'Segoe UI', sans-serif;
-  text-align: center;
-  padding: 50px;
-}
-
-h1 {
-  color: #444;
-}
-
-.wheel-container {
+  background: #fff;
+  height: 100vh;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px auto;
 }
 
-.wheel {
-  width: 200px;
-  height: 200px;
+.wheel-container {
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   background: conic-gradient(
     red 0deg 90deg,
@@ -26,28 +17,19 @@ h1 {
     yellow 180deg 270deg,
     blue 270deg 360deg
   );
-  transition: transform 0.8s ease-in-out;
+  transition: transform 2.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.wheel:hover {
-  animation: spin 1s ease-in-out forwards;
+.wheel-container:hover {
+  transform: rotate(360deg);
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-/* For mobile tap */
-@media (hover: none) {
-  .wheel:active {
-    animation: spin 1s ease-in-out forwards;
-  }
+.inner-circle {
+  width: 120px;
+  height: 120px;
+  background-color: white;
+  border-radius: 50%;
 }
