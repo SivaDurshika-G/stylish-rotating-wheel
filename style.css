@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background: #f0f0f0;
+  background: #fafafa;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,18 +22,18 @@ body {
 }
 
 .wheel:hover {
-  animation: rotateAndReturn 8s ease-in-out forwards;
+  animation: rotateBackAndForth 20s ease-in-out forwards;
 }
 
-/* Keyframes for 3 rounds rotate and 3 rounds return */
-@keyframes rotateAndReturn {
+/* 10 rounds forward, 10 rounds back */
+@keyframes rotateBackAndForth {
   0% {
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(1080deg); /* 3 rounds clockwise */
+    transform: rotate(3600deg); /* 10 rounds clockwise */
   }
   100% {
-    transform: rotate(0deg);    /* 3 rounds back to start */
+    transform: rotate(0deg);    /* return back */
   }
 }
