@@ -1,13 +1,14 @@
 body {
-  background: #fff;
-  height: 100vh;
   margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: #fdfdfd;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.wheel-container {
+.wheel {
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -17,19 +18,22 @@ body {
     yellow 180deg 270deg,
     blue 270deg 360deg
   );
-  transition: transform 2.5s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  animation: none;
 }
 
-.wheel-container:hover {
-  transform: rotate(360deg);
+.wheel:hover {
+  animation: rotateBack 4s ease-in-out forwards;
 }
 
-.inner-circle {
-  width: 120px;
-  height: 120px;
-  background-color: white;
-  border-radius: 50%;
+/* Keyframe to rotate 2 times clockwise and return */
+@keyframes rotateBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(720deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
