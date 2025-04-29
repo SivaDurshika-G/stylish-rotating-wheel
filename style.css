@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+
+.wheel {
+  width: 220px;
+  height: 220px;
+  background: conic-gradient(
+    #ff6b6b 0deg 60deg,
+    #feca57 60deg 120deg,
+    #1dd1a1 120deg 180deg,
+    #54a0ff 180deg 240deg,
+    #5f27cd 240deg 300deg,
+    #ee5253 300deg 360deg
+  );
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+              0 0 40px rgba(0, 255, 255, 0.2),
+              inset 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: transform 1.2s ease-in-out;
+}
+
+.wheel:hover {
+  transform: rotate(360deg);
+}
